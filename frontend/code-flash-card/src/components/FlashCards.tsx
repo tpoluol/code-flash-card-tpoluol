@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FlashCard from "./FlashCard";
+import styled from "@emotion/styled";
 
 // TODO: UI View단을 위한 interface 보관 장소 만들기
 export interface Card {
@@ -11,7 +12,7 @@ export interface Card {
 
 export default function FlashCards({ cards }: { cards: Card[] }) {
   return (
-    <ul>
+    <Styled.Cover>
       {
         cards.map((card) => {
           return (
@@ -21,6 +22,14 @@ export default function FlashCards({ cards }: { cards: Card[] }) {
           )
         })
       }
-    </ul>
+    </Styled.Cover>
   );
 }
+
+const Cover = styled.ul`
+  display: flex;
+  gap: 20px 2%;
+  flex-wrap: wrap;
+`
+
+const Styled = { Cover };
